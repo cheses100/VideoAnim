@@ -1,0 +1,129 @@
+{
+	"version": "1.0",
+	"variables": {
+		"user": {
+			"phone": {
+				"type": "string",
+				"value": ""
+			},
+			"country": {
+				"type": "string",
+				"value": ""
+			},
+			"name": {
+				"type": "string",
+				"value": ""
+			}
+		},
+		"chatbot": {
+			"check_entidad_url": {
+				"type": "string",
+				"value": "https://script.google.com/macros/s/AKfycbwgnUOic0OMqqAzCSljllkl8wG5fO6mtfSDTk1CFAmB62nmZ90/exec"
+			}
+		}
+  },
+  "messages": {
+    "error_msg": "Ha ocurrido un error. Por favor intente nuevamente"
+  },
+  "files": {},
+  "storage": {},
+  "entrypoint": "intro",
+  "transitions": {
+    "intro": {
+      "action": "intro_message",
+      "next": "opciones"
+    },
+    "opciones": {
+      "action": "mostrar_opciones",
+      "next": "datos_entidad"
+    },
+    "datos_entidad": {
+      "action": "get_datos_entidad",
+      "next": "end"
+    },
+    "end": {
+      "action": "end"
+    }
+  },
+  "actions": {
+    "intro_message": {
+      "type": "send_message",
+      "vars": {},
+      "messages": [
+        "Hola, si necesitas comunicate con alguna entidad de salud, seleccionala del las opciones disponibles:"
+      ]
+    },
+    "mostrar_opciones": {
+      "type": "send_message",
+      "vars": {},
+      "messages": [
+        "Selecciona la entidad"
+      ],
+      "input": {
+        "method": "keyboard",
+        "type": "radio",
+        "data": [{
+            "Barrios Unidos": "Barrios Unidos"
+          },
+          {
+            "Cajacopi": "Cajacopi"
+          },
+          {
+            "Coosalud": "Coosalud"
+          },
+          {
+            "Comparta": "Comparta"
+          },
+          {
+            "Mutual Ser": "Mutual Ser"
+          },
+          {
+            "Nueva EPS": "Nueva EPS"
+          },
+          {
+            "Ferrocarriles Nales": "Ferrocarriles Nales"
+          },
+          {
+            "Famisanar": "Famisanar"
+          },
+          {
+            "Saludtotal": "Saludtotal"
+          },
+          {
+            "Coomeva": "Coomeva"
+          },
+          {
+            "Sura": "Sura"
+          },
+          {
+            "Sanitas": "Sanitas"
+          },
+          {
+            "Medimas": "Medimas"
+          }
+        ],
+        "variables": []
+      }
+    },
+    "get_datos_entidad": {
+      "type": "call_api",
+      "vars": {},
+      "eval": {
+        "method": "GET",
+        "content_type": "application/json",
+        "url": "{{ variables.chatbot.check_entidad_url }}",
+        "params": {
+          "entidad": "{{ transition.opciones.val }}"
+        },
+        "headers": {}
+      }
+    },
+    "end": {
+      "type": "send_message",
+      "vars": {},
+      "messages": [
+        "{{ transition.datos_entidad.eval_response.msg }}"
+      ]
+    }
+  }
+}

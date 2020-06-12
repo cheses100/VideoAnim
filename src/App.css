@@ -1,0 +1,125 @@
+.App {
+  /* text-align: center; */
+  /* height: auto;; */
+  /* max-width: 85%; */
+  top: 10px;
+  left: 10px;
+  overflow: hidden;
+}
+.main {
+  top: 10px;
+  left: 10px;
+  overflow: hidden; 
+  width: 100vh;
+  height: 10% !important;
+  min-height: 100vh;
+  /* padding-bottom: 56.25%; */
+  position: relative;
+  /* object-fit: scale-down; */
+  /* overflow: hidden; */
+}
+
+.dummy {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+.video-react{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  /* max-width: 65%; */
+  /* width: 100% !important; */
+  /* height: 731.25px !important; */
+  padding-top: 10px !important;
+  padding-left: 10px !important;
+  object-fit: scale-down;
+  padding-bottom: 56.25%; 
+   max-height: 100vh;
+  overflow: hidden;
+}
+
+.video-react .video-react-control-bar {
+
+}
+
+.video-react .video-react-video {
+  overflow-y: hidden;
+  /* position: absolute; */
+
+  /* height: 1200px;
+  width: 675px;  */
+}
+
+.salut {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-align: left;
+}
+
+.mytext {
+  position: relative;
+  display:inline-block;
+  min-width: 0;
+  top: 10px;
+  left: 10px;
+  text-align: left;
+}
+
+.mytext2 {
+  position: relative;
+  top: 100px;
+  left: 325px;
+  width: 0px;
+  color: white;
+  opacity: 0;
+  text-align: center;
+}
+
+.mytext3 {
+  position: absolute;
+  top: 360px;
+  left: 1310px;
+  width: 0px;
+  color: red;
+  opacity: 0;
+  margin: 0 20px;
+    text-align: center;
+  /* cursor: pointer; */
+}
+
+.rec1 {
+  position: absolute;
+  top: 10px;
+  left: 1310px;
+  width: 0px;
+  height: 731.25px;
+  background-color: blue;
+}
+
+.button {
+  position: absolute;
+  top: 300px;
+  left: 1310px;
+  width: 0px;
+  /* color: red; */
+  opacity: 0;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  padding: 15px 25px;
+  margin: 0 20px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.controls{
+  z-index: 100;
+}
