@@ -112,8 +112,6 @@ class App extends Component {
         width: this.container.offsetWidth,
         height: this.container.offsetHeight,
       },
-      width: window.innerWidth,
-      height: window.innerHeight,
       mainStyle: {
         /* text-align: center;
         top: 10px;
@@ -131,10 +129,9 @@ class App extends Component {
     };
   }
   updateDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight});
     let newStyle = {...this.state.mainStyle};
     if (window.innerHeight*1.6< window.innerWidth) {
-      newStyle.width = window.innerHeight*1.4;
+      newStyle.width = window.innerHeight*1.5;
     } else {
       newStyle.width = window.innerWidth*.9;
     }
@@ -149,7 +146,7 @@ class App extends Component {
       },
     });
     window.addEventListener("resize", this.updateDimensions.bind(this));
-
+    this.updateDimensions();
     this.player.actions.toggleFullscreen=()=>{console.log('prevent full screen video');};
     //const arr = this.salutation.split('');
 
