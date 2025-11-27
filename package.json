@@ -12,7 +12,7 @@
     "react-media-player": "^0.7.9",
     "react-player": "^1.14.2",
     "react-resize-detector": "^4.2.1",
-    "react-scripts": "3.3.0",
+    "react-scripts": "5.0.1",
     "styled-components": "^5.0.0",
     "video-react": "^0.14.1"
   },
